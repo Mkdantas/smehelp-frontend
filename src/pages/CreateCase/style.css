@@ -9,9 +9,41 @@
 
 #create-case-page .create-case-form-title{
     text-align: center;
+    margin-top: 0;
 }
 
 #create-case-page .create-case-form{
     width: 100%;
     margin: 10%
+}
+
+#create-case-page .create-case-form button{
+    margin-top: 2rem;
+    height: 3rem;
+    width: 100%;
+    border: none;
+    color: #E0E0E0;
+    border-radius: 10px;
+    transition: 0.5s;
+    background-color: #5272c4;
+}
+
+#create-case-page .create-case-form button:hover{
+    background-color: #435d9e;
+    cursor: pointer;
+}
+
+#create-case-page .create-case-form textarea{
+    width: 100%;
+    height: 10rem;
+    outline: 0;
+    border: white;
+    margin-top: 0.3rem;
+    border: none;
+    font: 1.6rem 600 Nunito;
+    color: #E0E0E0;
+    outline: 0;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    background: #111829;
 }
