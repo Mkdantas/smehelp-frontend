@@ -1,0 +1,17 @@
+#create-case-page{
+    display: flex;
+    height: 80vh;
+    width: 50%;
+    justify-content: center;
+    background: #243047;
+    border-radius: 20px
+}
+
+#create-case-page .create-case-form-title{
+    text-align: center;
+}
+
+#create-case-page .create-case-form{
+    width: 100%;
+    margin: 10%
+}
