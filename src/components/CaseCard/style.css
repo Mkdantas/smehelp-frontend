@@ -1,0 +1,57 @@
+#case-card{
+    margin: 2rem;
+    height: 3rem;
+    background: #657188;
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+#case-card .avatar {
+    width: 70px;
+    height: 100%;
+}
+
+#case-card .avatar div{
+    width: 100%;
+    height: 100%;
+    background: rgb(155, 150, 106);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#case-card .labels, #case-card .infos{
+    margin-top: -1rem;
+    margin-left: 1rem;
+}
+
+#case-card .labels p{
+    font-weight: 700;
+}
+
+#case-card .take-button{
+    display: flex; 
+    width: 100%;
+    justify-content: flex-end;
+
+}
+
+#case-card .take-button button{
+    background: #3f8d50;
+    border: none;
+    border-radius: 10px;
+    color: #E0E0E0;
+    width: 80px;
+    margin-right: 20px;
+
+}
+
+#case-card .take-button button:hover{
+    background: #357744;
+    cursor: pointer;
+
+}

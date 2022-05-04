@@ -2,6 +2,7 @@ body {
     color: #E0E0E0;
     background: #111829;
     max-height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #root{
