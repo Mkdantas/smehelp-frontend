@@ -4,9 +4,10 @@ import './style.css'
 interface CaseCardProps {
     caseNumber: string;
     agentName: string;
+    onTake?: any
 }
 
-const CaseCard: React.FC<CaseCardProps> = ({caseNumber, agentName}) => {
+const CaseCard: React.FC<CaseCardProps> = ({caseNumber, agentName, onTake}) => {
     return (
     <div id="case-card">
         <div className="avatar">
@@ -23,7 +24,7 @@ const CaseCard: React.FC<CaseCardProps> = ({caseNumber, agentName}) => {
             <p className="agent-info">{agentName}</p>
         </div>
         <div className="take-button">
-            <button>Take</button>
+            <button onClick={onTake}>Take</button>
         </div>
     </div>
     )
