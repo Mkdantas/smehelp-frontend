@@ -1,4 +1,4 @@
-#case-card{
+#unassigned-case-card{
     margin: 2rem;
     height: 3rem;
     background: #657188;
@@ -9,12 +9,12 @@
     margin-top: 0rem;
 }
 
-#case-card .avatar {
-    width: 70px;
-    height: 100%;
+#unassigned-case-card .avatar {
+    width: 60px;
+    height: 50px;
 }
 
-#case-card .avatar div{
+#unassigned-case-card .avatar div{
     width: 100%;
     height: 100%;
     background: rgb(155, 150, 106);
@@ -24,23 +24,23 @@
     align-items: center;
 }
 
-#case-card .labels, #case-card .infos{
+#unassigned-case-card .labels, #unassigned-case-card .infos{
     margin-top: -1rem;
     margin-left: 1rem;
 }
 
-#case-card .labels p{
+#unassigned-case-card .labels p{
     font-weight: 700;
 }
 
-#case-card .take-button{
+#unassigned-case-card .take-button{
     display: flex; 
     width: 100%;
     justify-content: flex-end;
 
 }
 
-#case-card .take-button button{
+#unassigned-case-card .take-button button{
     background: #3f8d50;
     border: none;
     border-radius: 10px;
@@ -50,7 +50,7 @@
 
 }
 
-#case-card .take-button button:hover{
+#unassigned-case-card .take-button button:hover{
     background: #357744;
     cursor: pointer;
 

@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = ({ name, label, textarea, ...rest }) =>{
         <div className="input-block">
             <label>{label}</label>
             {textarea ? 
-            <></> : <input type="text" id={name} {...rest} />}
+            <></> : <input id={name} {...rest} />}
             
         </div>
     )

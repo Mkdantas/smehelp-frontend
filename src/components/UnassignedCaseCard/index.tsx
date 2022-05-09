@@ -1,15 +1,15 @@
 import React from 'react';
 import './style.css'
 
-interface CaseCardProps {
+interface UnassignedCaseCardProps {
     caseNumber: string;
     agentName: string;
     onTake?: any
 }
 
-const CaseCard: React.FC<CaseCardProps> = ({caseNumber, agentName, onTake}) => {
+const UnassignedCaseCard: React.FC<UnassignedCaseCardProps> = ({caseNumber, agentName, onTake}) => {
     return (
-    <div id="case-card">
+    <div id="unassigned-case-card">
         <div className="avatar">
             <div>
                 M
@@ -30,4 +30,4 @@ const CaseCard: React.FC<CaseCardProps> = ({caseNumber, agentName, onTake}) => {
     )
 }
 
-export default CaseCard;
+export default UnassignedCaseCard;

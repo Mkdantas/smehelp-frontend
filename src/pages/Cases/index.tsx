@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CaseCard from '../../components/CaseCard';
+import UnassignedCaseCard from '../../components/UnassignedCaseCard';
 import socketIOClient from 'socket.io-client';
 
 import './style.css';
@@ -58,7 +58,7 @@ function Cases() {
   return (
     <div id="cases-page">
       {data.map((item: any) => (
-        <CaseCard
+        <UnassignedCaseCard
           key={item.id}
           agentName={item.agent}
           caseNumber={item.case_number}

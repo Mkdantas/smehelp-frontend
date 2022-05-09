@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import CaseCard from '../../components/CaseCard';
 import socketIOClient from 'socket.io-client';
+import OpenCaseCard from '../../components/OpenCaseCard';
 
 import './style.css';
 
 function OpenCases() {
   const [data, setData] = useState<any>([]);
   const [socket, setSocket] = useState<any>();
-  console.log()
+  console.log();
 
-
-
-  const getUnassigned = async () => {
+  const getOpenCases = async () => {
     await fetch(`${process.env.REACT_APP_API}/cases/open`, {
-      method: 'GET'
-    }).then((res:any) => res.json()).then((data:any) => setData(data));
-
+      method: 'GET',
+    })
+      .then((res: any) => res.json())
+      .then((data: any) => setData(data));
   };
 
-  const handleTake = async (id:string) =>{
+  const handleClose = async (id: string) => {
+   
+  };
+
+  const handlePending = async (id: string) => {
     await fetch(`${process.env.REACT_APP_API}/cases/${id}`, {
       method: 'PUT',
       headers: {
@@ -26,43 +29,36 @@ function OpenCases() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        "status": 'open'
+        "status": 'pending'
       })
-    }).then((res:any) => console.log(res))
-  }
-  //socket connection
+    }).then(() => getOpenCases())
+  };
+
+  const handleDelete = async (id: string) => {
+    await fetch(`${process.env.REACT_APP_API}/cases/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then(() => getOpenCases());
+  };
+
   useEffect(() => {
-      getUnassigned();
-      if(!socket){
-        setSocket(socketIOClient(`${process.env.REACT_APP_API}`))
-      }
-
-      return () =>{
-        socket?.disconnect();
-      }
-  }, [socket]);
-
-  //socket events
-  useEffect(() =>{
-    if(!socket) return;
-
-    socket.on('new_case', getUnassigned);
-    socket.on('update', getUnassigned);
-
-    return () =>{
-      socket.off('new_case')
-      socket.off('update')
-    }
-  })
+    getOpenCases();   
+  });
 
   return (
     <div id="open-cases-page">
       {data.map((item: any) => (
-        <CaseCard
+        <OpenCaseCard
           key={item.id}
-          agentName={item.agent}
           caseNumber={item.case_number}
-          onTake={() =>  handleTake(item.id)}
+          agentName={item.agent}
+          problemDescription={item.problem_description}
+          onClose={() => handleClose(item.id)}
+          onDelete={() => handleDelete(item.id)}
+          onPending={() => handlePending(item.id)}
         />
       ))}
     </div>
