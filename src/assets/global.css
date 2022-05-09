@@ -3,6 +3,8 @@ body {
     background: #111829;
     max-height: 100vh;
     font-family: 'Josefin Sans', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 #root{
@@ -12,3 +14,78 @@ body {
     justify-content: center;
     align-items: center;
 }
+a{
+    text-decoration: none;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+#main .navbar{
+    height: 100%;
+    max-width: 15vw;
+    min-width: 250px;
+    width: 100%;
+    background: #243047;
+    margin: 0;
+}
+
+#main .navbar .greetings{
+    text-align: center;
+
+}
+
+#main .navbar .navitems{
+    margin-top: 5rem;
+    height: 80vh;
+}
+
+#main .navbar .navitems .navitem{
+    margin: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #E0E0E0;
+
+}
+
+#main .navbar .navitems .navitem:hover{
+    background: #435d9e;
+    padding-left: 3rem;
+    transition: 0.5s;
+}
+
+
+#main .navbar .logout .navitem{
+    margin: 0;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#main .navbar .logout .navitem:hover{
+    background: #435d9e;
+    padding-left: 3rem;
+    transition: 0.5s;
+}
+
+
+#main .content{
+    display: flex;
+    width: 85vw;
+    justify-content: center;
+    align-items: center;
+}
+

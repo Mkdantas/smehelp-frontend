@@ -4,7 +4,7 @@ import socketIOClient from 'socket.io-client';
 
 import './style.css';
 
-function Cases() {
+function OpenCases() {
   const [data, setData] = useState<any>([]);
   const [socket, setSocket] = useState<any>();
   console.log()
@@ -12,7 +12,7 @@ function Cases() {
 
 
   const getUnassigned = async () => {
-    await fetch(`${process.env.REACT_APP_API}/cases/unassigned`, {
+    await fetch(`${process.env.REACT_APP_API}/cases/open`, {
       method: 'GET'
     }).then((res:any) => res.json()).then((data:any) => setData(data));
 
@@ -56,7 +56,7 @@ function Cases() {
   })
 
   return (
-    <div id="cases-page">
+    <div id="open-cases-page">
       {data.map((item: any) => (
         <CaseCard
           key={item.id}
@@ -69,4 +69,4 @@ function Cases() {
   );
 }
 
-export default Cases;
+export default OpenCases;

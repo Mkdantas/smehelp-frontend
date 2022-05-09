@@ -14,7 +14,7 @@ function CreateCase(){
   const sendCase = async (e: any) =>{
     e.preventDefault();
 
-    await fetch(`http://localhost:4000/cases`, {
+    await fetch(`${process.env.REACT_APP_API}/cases`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
