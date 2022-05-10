@@ -9,15 +9,19 @@ interface OpenCaseCardProps {
   onClose?: any;
   onPending?: any;
   onDelete?: any;
+  onCloseStatus?: any;
+  onDescribe?: any;
 }
 
-const OpenCaseCard: React.FC<OpenCaseCardProps> = ({
+const OpenCasesCard: React.FC<OpenCaseCardProps> = ({
   caseNumber,
   agentName,
   problemDescription,
   onClose,
   onPending,
   onDelete,
+  onCloseStatus,
+  onDescribe
 }) => {
   return (
     <div id="open-case-card">
@@ -36,7 +40,12 @@ const OpenCaseCard: React.FC<OpenCaseCardProps> = ({
       </div>
       <div className="action">
         <Input textarea={true} name="Solution" label="Describe solution:" />
-        <textarea></textarea>
+        <textarea onChange={(e) => onDescribe(e)}></textarea>
+        <select name="close-status" id="on-close-status" onChange={(e) => onCloseStatus(e)}>
+          <option value="Solved">Solved</option>
+          <option value="Not solved - Out of Scope">Not solved - Out of Scope</option>
+          <option value="Not solved - Unfeasible">Not solved - Unfeasible</option>
+        </select>
         <div className="action-buttons">
           <button className="close" onClick={onClose}>
             Close
@@ -53,4 +62,4 @@ const OpenCaseCard: React.FC<OpenCaseCardProps> = ({
   );
 };
 
-export default OpenCaseCard;
+export default OpenCasesCard;

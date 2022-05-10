@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import socketIOClient from 'socket.io-client';
-import OpenCaseCard from '../../components/OpenCaseCard';
+import OpenCasesCard from '../../components/OpenCasesCard';
 
 import './style.css';
 
 function OpenCases() {
   const [data, setData] = useState<any>([]);
-  const [socket, setSocket] = useState<any>();
-  console.log();
+  const [onCloseStatus, setOnCloseStatus] = useState('Solved');
+  const [solutionDescription, setSolutionDescription] = useState('')
 
   const getOpenCases = async () => {
     await fetch(`${process.env.REACT_APP_API}/cases/open`, {
@@ -18,7 +17,17 @@ function OpenCases() {
   };
 
   const handleClose = async (id: string) => {
-   
+    await fetch(`${process.env.REACT_APP_API}/cases/${id}`, {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "status": 'closed',
+        "problem_solution": solutionDescription
+      })
+    }).then(() => getOpenCases())
   };
 
   const handlePending = async (id: string) => {
@@ -51,7 +60,7 @@ function OpenCases() {
   return (
     <div id="open-cases-page">
       {data.map((item: any) => (
-        <OpenCaseCard
+        <OpenCasesCard
           key={item.id}
           caseNumber={item.case_number}
           agentName={item.agent}
@@ -59,6 +68,8 @@ function OpenCases() {
           onClose={() => handleClose(item.id)}
           onDelete={() => handleDelete(item.id)}
           onPending={() => handlePending(item.id)}
+          onCloseStatus={(e:any) => setOnCloseStatus(e.target.value)}
+          onDescribe={(e:any) => setSolutionDescription(e.target.value)}
         />
       ))}
     </div>
