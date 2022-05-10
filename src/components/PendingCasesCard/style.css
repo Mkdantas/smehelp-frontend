@@ -1,0 +1,131 @@
+#pending-case-card{
+    margin: 2rem;
+    background: #657188;
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+}
+
+#pending-case-card .avatar {
+    height: 70px;
+    margin-top: 1.8rem;
+}
+
+#pending-case-card .avatar div{
+    width: 60px;
+    height: 60px;
+    background: rgb(155, 150, 106);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pending-case-card .infos{
+    margin-top: 0.8rem;
+    margin-left: 1rem;
+    width: 60%;
+    height:100%;
+    word-break: break-all;
+}
+
+#pending-case-card .labels{
+    margin-top: 0.8rem;
+    margin-left: 1rem;
+    width: 15%;
+    height:100%;
+    word-break: normal;
+}
+
+#pending-case-card .labels p{
+    font-weight: 700;
+}
+
+#pending-case-card .action{
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 30%;
+}
+#pending-case-card .action label{
+ margin-left: 10px;
+}
+#pending-case-card .action textarea{
+    width: 90%;
+    height: 100%;
+    outline: 0;
+    border: white;
+    margin: 10px;
+    border: none;
+    font: 1.6rem 600 Nunito;
+    color: #E0E0E0;
+    outline: 0;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    background: #111829;
+}
+
+#pending-case-card .action select{
+    outline: 0;
+    width: 95%;
+    border: white;
+    margin: 10px;
+    margin-top: 0;
+    border: none;
+    font: 1.6rem 600 Nunito;
+    color: #E0E0E0;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    background: #111829;
+}
+
+#pending-case-card .action-buttons{
+    display: flex; 
+    width: 100%;
+    justify-content: start;
+    align-items: flex-end;
+    flex-direction:row;
+    align-self: flex-end;
+
+}
+
+#pending-case-card .action-buttons button{
+    border: none;
+    border-radius: 10px;
+    color: #E0E0E0;
+    width: 80px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+
+#pending-case-card .action-buttons .close{
+    background: #3a57a1;
+}
+
+
+#pending-case-card .action-buttons .close:hover{
+    background: #243047;
+
+
+}
+
+#pending-case-card .action-buttons .pending{
+    background: #a1853a;
+}
+
+#pending-case-card .action-buttons .pending:hover{
+    background: #6e5c28;
+}
+
+#pending-case-card .action-buttons .delete{
+    background: #a13a3a;
+}
+
+#pending-case-card .action-buttons .delete:hover{
+    background: #702828;
+}

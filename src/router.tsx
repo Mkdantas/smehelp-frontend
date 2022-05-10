@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cases from './pages/Cases';
 import CreateCase from './pages/CreateCase';
 import OpenCases from './pages/OpenCases';
+import PendingCases from './pages/PendingCases';
 
 function Router() {
   return (
@@ -34,6 +35,7 @@ function Router() {
           <Routes>
             <Route path="/cases/create" element={<CreateCase />} />
             <Route path="/cases/open" element={<OpenCases />} />
+            <Route path="/cases/pending" element={<PendingCases />} />
             <Route path="/cases" element={<Cases />} />
           </Routes>
         </div>

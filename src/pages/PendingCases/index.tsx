@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import OpenCasesCard from '../../components/OpenCasesCard';
+import PendingCasesCard from '../../components/PendingCasesCard';
 
 import './style.css';
 
-function OpenCases() {
+function PendingCases() {
   const [data, setData] = useState<any>([]);
   const [onCloseStatus, setOnCloseStatus] = useState('Solved');
   const [solutionDescription, setSolutionDescription] = useState('')
 
-  const getOpenCases = async () => {
-    await fetch(`${process.env.REACT_APP_API}/cases/open`, {
+  const getPendingCases = async () => {
+    await fetch(`${process.env.REACT_APP_API}/cases/pending`, {
       method: 'GET',
     })
       .then((res: any) => res.json())
@@ -28,20 +28,7 @@ function OpenCases() {
         "problem_solution": solutionDescription,
         "on_close_status": onCloseStatus
       })
-    }).then(() => getOpenCases())
-  };
-
-  const handlePending = async (id: string) => {
-    await fetch(`${process.env.REACT_APP_API}/cases/${id}`, {
-      method: 'PUT',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        "status": 'pending'
-      })
-    }).then(() => getOpenCases())
+    }).then(() => getPendingCases())
   };
 
   const handleDelete = async (id: string) => {
@@ -51,24 +38,23 @@ function OpenCases() {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }
-    }).then(() => getOpenCases());
+    }).then(() => getPendingCases());
   };
 
   useEffect(() => {
-    getOpenCases();   
+    getPendingCases();   
   });
 
   return (
-    <div id="open-cases-page">
+    <div id="pending-cases-page">
       {data.map((item: any) => (
-        <OpenCasesCard
+        <PendingCasesCard
           key={item.id}
           caseNumber={item.case_number}
           agentName={item.agent}
           problemDescription={item.problem_description}
           onClose={() => handleClose(item.id)}
           onDelete={() => handleDelete(item.id)}
-          onPending={() => handlePending(item.id)}
           onCloseStatus={(e:any) => setOnCloseStatus(e.target.value)}
           onDescribe={(e:any) => setSolutionDescription(e.target.value)}
         />
@@ -77,4 +63,4 @@ function OpenCases() {
   );
 }
 
-export default OpenCases;
+export default PendingCases;
