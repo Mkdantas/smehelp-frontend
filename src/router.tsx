@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cases from './pages/Cases';
+import ClosedCases from './pages/ClosedCases';
 import CreateCase from './pages/CreateCase';
 import OpenCases from './pages/OpenCases';
 import PendingCases from './pages/PendingCases';
@@ -15,16 +16,16 @@ function Router() {
           <h3 className="greetings">Welcome Matheus</h3>
           <div className="navitems">
             <Link to="/cases">
-              <h3 className="navitem">Unassigned Cases</h3>
+              <h4 className="navitem">Unassigned Cases</h4>
             </Link>
             <Link to="/cases/open">
-              <h3 className="navitem">Open Cases</h3>
+              <h4 className="navitem">Open Cases</h4>
             </Link>
             <Link to="/cases/pending">
-              <h3 className="navitem">Pending Cases</h3>
+              <h4 className="navitem">Pending Cases</h4>
             </Link>
             <Link to="/cases/closed">
-              <h3 className="navitem">Closed Cases</h3>
+              <h4 className="navitem">Closed Cases</h4>
             </Link>
           </div>
           <div className="logout">
@@ -36,6 +37,7 @@ function Router() {
             <Route path="/cases/create" element={<CreateCase />} />
             <Route path="/cases/open" element={<OpenCases />} />
             <Route path="/cases/pending" element={<PendingCases />} />
+            <Route path="/cases/closed" element={<ClosedCases />} />
             <Route path="/cases" element={<Cases />} />
           </Routes>
         </div>

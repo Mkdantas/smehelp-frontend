@@ -1,0 +1,11 @@
+#closed-cases-page{
+    display: flex;
+    height: 80vh;
+    width: 90%;
+    justify-content: flex-start;
+    background: #243047;
+    border-radius: 20px;
+    flex-direction: column;
+    padding-top: 3rem;
+    overflow-y: auto;
+}

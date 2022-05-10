@@ -1,0 +1,36 @@
+#closed-case-card{
+    margin: 1rem;
+    border-radius: 20px;
+    display: flex;
+    margin-bottom: 0.3rem;
+    margin-top: 0rem;
+    transition: 2s;
+}
+
+.Solved{
+    background: #658865;
+}
+
+.not-solved {
+    background: #886565;
+}
+
+
+
+#closed-case-card .infos{
+    margin-left: 1rem;
+    width: 60%;
+    height:100%;
+    word-break: break-all;
+}
+
+#closed-case-card .labels{
+    margin-left: 1rem;
+    width: 15%;
+    height:100%;
+    word-break: normal;
+}
+
+#closed-case-card .labels p{
+    font-weight: 700;
+}
