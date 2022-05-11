@@ -22,6 +22,17 @@ function ClosedCases() {
 
   return (
     <div id="closed-cases-page">
+      <div className="sme-filter">
+      <div className="sme-filter-item">All</div>
+        <div className="sme-filter-item active">Matheus Dantas</div>
+        <div className="sme-filter-item">Caio Ferrari</div>
+        <div className="sme-filter-item">José Delgado</div>
+        <div className="sme-filter-item">Ricardo Gimenes</div>
+        <div className="sme-filter-item">Jesus Navarro</div>
+        <div className="sme-filter-item">Eric Pichai</div>
+        <div className="sme-filter-item">William Sousa</div>
+        <div className="sme-filter-item">Amanda Batista</div>
+      </div>
       {data.map((item: any) => (
         <ClosedCasesCard
           key={item.id}

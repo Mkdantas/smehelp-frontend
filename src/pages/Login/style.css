@@ -1,0 +1,41 @@
+#login-page{
+    display: flex;
+    height: 43vh;
+    width: 43vh;
+    justify-content: flex-start;
+    background: #243047;
+    border-radius: 20px;
+    flex-direction: column;
+    overflow-y: auto;
+    justify-self: center;
+    align-self: center;
+    padding: 2rem;
+}
+
+#login-page h1{
+    text-align: center;
+}
+
+#login-page form{
+    padding: 1rem;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-page form button{
+    width: 104%;
+    height: 3rem; 
+    margin-top: 2rem;
+    background-color: #5272c4; 
+    color: #E0E0E0;
+    border: none;
+}
+
+#login-page form button:hover{
+    background-color: #435d9e;
+    cursor: pointer;
+    transition: 0.5s;
+}
