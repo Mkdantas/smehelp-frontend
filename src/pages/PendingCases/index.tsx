@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PendingCasesCard from '../../components/PendingCasesCard';
+import relax from '../../assets/icons/relax.svg';
 
 import './style.css';
 
@@ -47,7 +48,7 @@ function PendingCases() {
 
   return (
     <div id="pending-cases-page">
-      {data.map((item: any) => (
+      {data[0]? data.map((item: any) => (
         <PendingCasesCard
           key={item.id}
           caseNumber={item.case_number}
@@ -58,7 +59,12 @@ function PendingCases() {
           onCloseStatus={(e:any) => setOnCloseStatus(e.target.value)}
           onDescribe={(e:any) => setSolutionDescription(e.target.value)}
         />
-      ))}
+      )): (
+        <div className="no-cases">
+        <img src={relax}/>
+        <h2>No cases at the moment.</h2>
+        </div>
+      )}
     </div>
   );
 }

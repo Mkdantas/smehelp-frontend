@@ -9,3 +9,16 @@
     padding-top: 3rem;
     overflow-y: auto;
 }
+
+#pending-cases-page .no-cases {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+#pending-cases-page .no-cases img{
+    height: 300px;
+    width: 300px;
+}

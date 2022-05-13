@@ -1,0 +1,16 @@
+#load{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+#load h3{
+    text-align: center;
+}
+
+#load img{
+    height: 300px;
+    width: 300px;
+}

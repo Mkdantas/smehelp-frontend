@@ -50,3 +50,19 @@
     border-radius: 5px;
     background: #111829;
 }
+
+#create-case-page .create-case-form select{
+    width: 102%;
+    height: 3rem;
+    margin-left: -0.5%;
+    outline: 0;
+    border: white;
+    margin-top: 0.3rem;
+    border: none;
+    font: 1.6rem 600 Nunito;
+    color: #E0E0E0;
+    outline: 0;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    background: #111829;
+}

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import UnassignedCaseCard from '../../components/UnassignedCaseCard';
 import socketIOClient from 'socket.io-client';
+import relax from '../../assets/icons/relax.svg';
 
 import './style.css';
 
-function Cases() {
+function UnassignedCases() {
   const [data, setData] = useState<any>([]);
   const [socket, setSocket] = useState<any>();
   console.log()
@@ -57,16 +58,21 @@ function Cases() {
 
   return (
     <div id="cases-page">
-      {data.map((item: any) => (
+      {data[0] ? data.map((item: any) => (
         <UnassignedCaseCard
           key={item.id}
           agentName={item.agent}
           caseNumber={item.case_number}
           onTake={() =>  handleTake(item.id)}
         />
-      ))}
+      )) : (
+        <div className="no-cases">
+        <img src={relax}/>
+        <h2>No cases at the moment.</h2>
+        </div>
+      )}
     </div>
   );
 }
 
-export default Cases;
+export default UnassignedCases;

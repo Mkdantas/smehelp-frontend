@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import OpenCasesCard from '../../components/OpenCasesCard';
+import relax from '../../assets/icons/relax.svg';
 
 import './style.css';
 
@@ -60,7 +61,7 @@ function OpenCases() {
 
   return (
     <div id="open-cases-page">
-      {data.map((item: any) => (
+      {data[0] ? data.map((item: any) => (
         <OpenCasesCard
           key={item.id}
           caseNumber={item.case_number}
@@ -72,7 +73,12 @@ function OpenCases() {
           onCloseStatus={(e:any) => setOnCloseStatus(e.target.value)}
           onDescribe={(e:any) => setSolutionDescription(e.target.value)}
         />
-      ))}
+      )): (
+        <div className="no-cases">
+        <img src={relax}/>
+        <h2>No cases at the moment.</h2>
+        </div>
+      )}
     </div>
   );
 }
