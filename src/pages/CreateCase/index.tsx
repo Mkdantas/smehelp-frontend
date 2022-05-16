@@ -34,7 +34,7 @@ function CreateCase() {
         type: caseType,
       }),
     }).then(() => {
-      navigate("/cases")
+      navigate("/cases/unassigned")
     });
   };
 
